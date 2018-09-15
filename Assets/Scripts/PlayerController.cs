@@ -3,12 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    public Vector2 center;
-    public float radiusIncrement, angleSpeed, minRadius = 2, maxRadius = 12;
-    float radius, angle;
+    private Vector2 center;
+    public float speed = .2f;
+    float radius, angle, radiusIncrement, minRadius, maxRadius;
     GameObject player;
+    RingManager ringMan;
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
+        ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
+        radiusIncrement = ringMan.ringBuffer;
+        minRadius = radiusIncrement;
+        maxRadius = radiusIncrement * ringMan.numRings;
+        center = ringMan.center;
 	}
 	
 	// Update is called once per frame
@@ -21,18 +27,18 @@ public class PlayerController : MonoBehaviour {
         {
             radius -= radiusIncrement;
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            angle += angleSpeed;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            angle -= angleSpeed;
-        }
         if (minRadius > radius)
             radius = minRadius;
         if (radius > maxRadius)
             radius = maxRadius;
+        if (Input.GetKey(KeyCode.D))
+        {
+            angle += speed/radius;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            angle -= speed/radius;
+        }
         player.transform.position = new Vector2(radius * Mathf.Cos(angle) + center.x, radius * Mathf.Sin(angle) + center.y);
 
 	}
