@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
         radiusIncrement = ringMan.ringBuffer/2;
         minRadius = radiusIncrement;
-        maxRadius = radiusIncrement * ringMan.numRings;
+        maxRadius = ringMan.getMaxRingNum()*radiusIncrement;
         center = ringMan.center;
 	}
 	
@@ -40,6 +40,6 @@ public class PlayerController : MonoBehaviour {
             angle -= speed/radius;
         }
         player.transform.position = new Vector2(radius * Mathf.Cos(angle) + center.x, radius * Mathf.Sin(angle) + center.y);
-
+        player.transform.up = (Vector2)player.transform.position - center;
 	}
 }

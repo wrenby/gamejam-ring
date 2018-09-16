@@ -9,7 +9,7 @@ public class RingManager : MonoBehaviour {
     public Vector2 center;
     // Use this for initialization
     void Start () {
-        numRings = Mathf.Min(rings.Length, numRings);
+        numRings = getMaxRingNum();
         for (int i = 0; i < numRings; i++)
         {
             GameObject newRing = Instantiate(rings[i]);
@@ -24,4 +24,8 @@ public class RingManager : MonoBehaviour {
 	void Update () {
 		
 	}
+    public int getMaxRingNum()
+    {
+        return Mathf.Min(rings.Length, numRings);
+    }
 }

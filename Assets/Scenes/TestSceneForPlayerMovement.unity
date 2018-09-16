@@ -308,14 +308,9 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 212397368915175024, guid: 4f75e14c70991524699a5d5c567f89fb,
+    - target: {fileID: 61520324667942352, guid: 4f75e14c70991524699a5d5c567f89fb,
         type: 2}
-      propertyPath: m_SortingLayerID
-      value: -911086739
-      objectReference: {fileID: 0}
-    - target: {fileID: 212397368915175024, guid: 4f75e14c70991524699a5d5c567f89fb,
-        type: 2}
-      propertyPath: m_SortingLayer
+      propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -363,6 +358,11 @@ Prefab:
     - target: {fileID: 1189466791849548, guid: 3b90651a619d6fa489cce3d838fe77a7, type: 2}
       propertyPath: m_Name
       value: Meteor
+      objectReference: {fileID: 0}
+    - target: {fileID: 58194613496845978, guid: 3b90651a619d6fa489cce3d838fe77a7,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b90651a619d6fa489cce3d838fe77a7, type: 2}
