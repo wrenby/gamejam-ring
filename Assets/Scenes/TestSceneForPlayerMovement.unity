@@ -407,7 +407,7 @@ Prefab:
     - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
         type: 2}
       propertyPath: ringBuffer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
         type: 2}
@@ -489,6 +489,12 @@ Prefab:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 1593622500}
+    - target: {fileID: 114937765407503820, guid: 4f75e14c70991524699a5d5c567f89fb,
+        type: 2}
+      propertyPath: wall
+      value: 
+      objectReference: {fileID: 1652817743036262, guid: 5f53ca3fdd58dcd419de7b6e4878d05f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f75e14c70991524699a5d5c567f89fb, type: 2}
   m_IsPrefabAsset: 0

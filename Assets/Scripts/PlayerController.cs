@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour {
     private Vector2 center;
     public float speed = .2f;
-    public GameObject turret;
+    public GameObject turret, wall;
     public Text resourceText, timeText;
     public int startingResources = 100;
     float radius, angle, radiusIncrement, minRadius, maxRadius, startTime;
@@ -54,6 +54,10 @@ public class PlayerController : MonoBehaviour {
         {
             placeTurret();
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            placeWall();
+        }
         float deltaTime = Time.time - startTime;
         int seconds = ((int)deltaTime % 60);
         int minutes = ((int)deltaTime / 60);
@@ -64,6 +68,20 @@ public class PlayerController : MonoBehaviour {
     public void getResources(int amount)
     {
         resources += amount;
+    }
+
+    private void placeWall()
+    {
+        Orbiter wallScript = wall.GetComponent<Orbiter>();
+        if(resources >= wallScript.cost)
+        {
+            resources -= wallScript.cost;
+            GameObject ring = ringMan.getRing(transform.position);
+            GameObject newWall = Instantiate(wall, ring.transform);
+            Orbiter newWallScript = newWall.GetComponent<Orbiter>();
+            newWallScript.setTheta(angle);
+            newWallScript.setRho(radius);
+        }
     }
 
     private void placeTurret()
