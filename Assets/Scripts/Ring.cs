@@ -11,6 +11,8 @@ public class Ring : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0)
+            return;
 		if(ringMan.getSelectedRing() == this.gameObject)
         {
             GetComponent<SpriteRenderer>().sprite = selected;

@@ -19,6 +19,8 @@ public class MeteorCreator : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0)
+            return;
         float deltaTime = Time.time - startTime;
         if(lastCreation + delay < Time.time)
         {

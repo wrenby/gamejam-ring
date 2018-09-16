@@ -8,6 +8,8 @@ public class Projectile : MonoBehaviour {
 
     const float buf = 50.0f; // The center of bullets can be this many pixels offscreen before they despawn
     void Update() {
+        if (Time.timeScale == 0)
+            return;
         transform.position = transform.position + forward * Time.deltaTime * speed;
 
         Vector3 screen_space = Camera.main.WorldToScreenPoint(transform.position);

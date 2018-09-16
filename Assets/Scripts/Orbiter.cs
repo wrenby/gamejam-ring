@@ -41,6 +41,8 @@ public class Orbiter : MonoBehaviour {
 	}
 
 	void Update() {
+        if (Time.timeScale == 0)
+            return;
         if (ringMan.getSelectedRing().transform == transform.parent)
         {
             if (Input.GetKey(KeyCode.RightArrow))

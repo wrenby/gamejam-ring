@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     private Vector2 center;
-    public float speed = .2f, angleTolerance = .1f;
+    public float speed = .2f, tolerance = 1f;
     public GameObject turret, wall;
     public Text resourceText, timeText;
     public int startingResources = 100;
@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Time.timeScale == 0)
+            return;
         if (Input.GetKeyDown(KeyCode.W))
         {
             radius += radiusIncrement;
@@ -103,7 +105,7 @@ public class PlayerController : MonoBehaviour {
         GameObject ring = ringMan.getRing(transform.position);
         Orbiter[] orbiters = ring.GetComponentsInChildren<Orbiter>();
         for (int i = 0; i < orbiters.Length; i++) {
-            if (Mathf.Abs(orbiters[i].theta - angle) < angleTolerance)
+            if (Mathf.Abs(orbiters[i].theta%Orbiter.TWO_PI - angle%Orbiter.TWO_PI)%Mathf.PI * radius < tolerance)
             {
                 return false;
             }
