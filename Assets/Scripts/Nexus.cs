@@ -23,7 +23,7 @@ public class Nexus : MonoBehaviour {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1;
         }
-        if(hp <= .1 * maxHp)
+        if(hp <= 0)
         {
             AudioSource mainAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
             mainAudio.volume = 0;
