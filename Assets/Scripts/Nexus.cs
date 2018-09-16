@@ -34,6 +34,7 @@ public class Nexus : MonoBehaviour {
         hp -= damage;
         if(hp <= 0)
         {
+            hp = 0;
             Time.timeScale = 0;
             gameOverText.enabled = true;
         }
