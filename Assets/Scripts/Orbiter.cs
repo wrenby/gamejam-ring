@@ -16,7 +16,6 @@ public class Orbiter : MonoBehaviour {
     public float rho = 500.0f;
 	[Range(0.0f, TWO_PI)]
 	public float theta = 0.0f; // Angle
-
     public int maxHp = 100;
     private int hp;
 
@@ -57,8 +56,6 @@ public class Orbiter : MonoBehaviour {
         }
         if (canFire && Input.GetButton("Fire1") && lastFireTime + fireDelay <= Time.time)
         {
-            if (ring == ringMan.getSelectedRing())
-            {
                 Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
                 clone.speed = projectile_speed;
                 clone.forward = new Vector3( // Already normalized thanks to sin & cos
@@ -67,7 +64,6 @@ public class Orbiter : MonoBehaviour {
                     0
                 );
                 lastFireTime = Time.time;
-            }
         }
         theta = theta % TWO_PI;
 		transform.position = CartesianPosition();
@@ -89,7 +85,7 @@ public class Orbiter : MonoBehaviour {
         hp -= damage;
         if(hp <= 0)
         {
-            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            AudioSource audio = GameObject.FindGameObjectWithTag("Exploder").GetComponent<AudioSource>();
             audio.enabled = true;
             audio.Play();
             Destroy(this.gameObject);

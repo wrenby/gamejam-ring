@@ -124,7 +124,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: be6aa8df8a1e2b4459f0517fc5894f26, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d22516ce3ff5eb04d9edd2d905ed770d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -243,8 +243,10 @@ MonoBehaviour:
   fireDelay: 0
   canFire: 0
   rotationSpeed: 0.1
+  rho: 500
+  theta: 0
   maxHp: 500
-  projectile_offset: 0.04
+  ring: {fileID: 0}
   projectile_speed: 16
   projectile_basic: {fileID: 1918920795822620, guid: 041073e00d2184547b8fb102f426e533,
     type: 2}

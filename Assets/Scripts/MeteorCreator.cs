@@ -35,8 +35,6 @@ public class MeteorCreator : MonoBehaviour {
             Meteor newMeteorScript = newMeteor.GetComponent<Meteor>();
             newMeteorScript.setMaxHP((int)((newScale)*rate * ((deltaTime/60 + 5))));
             newMeteorScript.setDamage((int)((1 + newScale)*damageRate * ((deltaTime / 60 + 1))));
-            newMeteorScript.setMaxHP((int)((1 + newScale)*rate * ((deltaTime/60 + 5))));
-            newMeteorScript.setDamage((int)((1+newScale)*damageRate * ((deltaTime / 60 + 1))));
             lastCreation = Time.time;
         }
         if (lastFrequency + 5 < Time.time) { // Decreasing the delay is its own tick

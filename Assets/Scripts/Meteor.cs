@@ -40,7 +40,7 @@ public class Meteor : MonoBehaviour {
         if(hp <= 0)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().getResources((int)Random.Range(minResources, maxResources + 1));
-            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            AudioSource audio = GameObject.FindGameObjectWithTag("Exploder").GetComponent<AudioSource>();
             audio.enabled = true;
             audio.Play();
             Destroy(this.gameObject);

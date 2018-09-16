@@ -106,7 +106,8 @@ public class PlayerController : MonoBehaviour {
         GameObject ring = ringMan.getRing(transform.position);
         Orbiter[] orbiters = ring.GetComponentsInChildren<Orbiter>();
         for (int i = 0; i < orbiters.Length; i++) {
-            if (Mathf.Abs(orbiters[i].theta%Orbiter.TWO_PI - angle%Orbiter.TWO_PI)%Mathf.PI * radius < tolerance)
+            if (Mathf.Abs(orbiters[i].theta%Orbiter.TWO_PI - angle%Orbiter.TWO_PI) * radius < tolerance &&
+               (Orbiter.TWO_PI - Mathf.Abs(orbiters[i].theta % Orbiter.TWO_PI - angle % Orbiter.TWO_PI) )* radius < tolerance)
             {
                 return false;
             }
