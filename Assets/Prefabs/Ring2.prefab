@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4469935099202834}
   - component: {fileID: 212863300239625818}
+  - component: {fileID: 114040311960901038}
   m_Layer: 0
   m_Name: Ring2
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114040311960901038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1772935389007058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26941ae021623664e94904e57bc8e9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unselected: {fileID: 21300000, guid: 877d9eabedf7d8440a86ef1c23c7c72e, type: 3}
+  selected: {fileID: 21300000, guid: 421182705b352744197b4cd92f7cc280, type: 3}
 --- !u!212 &212863300239625818
 SpriteRenderer:
   m_ObjectHideFlags: 1

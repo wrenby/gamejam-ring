@@ -52,10 +52,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rings:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1373504873383678, guid: faf18bccd25c6f94a9a48f8bf55f1c3b, type: 2}
+  - {fileID: 1772935389007058, guid: 88435ff9b5cef6a43a4f7cc267975f15, type: 2}
+  - {fileID: 1731907946885058, guid: cb1e35a976a9dec4ab4f065df79fc4f1, type: 2}
+  - {fileID: 1143310154995414, guid: 042c22fe8588a4546b1addf510ac3280, type: 2}
   numRings: 5
   ringBuffer: 1
   center: {x: 0, y: 0}

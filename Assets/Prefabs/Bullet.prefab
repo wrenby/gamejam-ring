@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 33246924755509334}
   - component: {fileID: 114647228882883300}
   - component: {fileID: 114491595075283484}
+  - component: {fileID: 114841528522149958}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,3 +144,16 @@ MonoBehaviour:
   - {x: 0, y: 0.5}
   mesh_filter: {fileID: 33246924755509334}
   poly_collider: {fileID: 60750542048347848}
+--- !u!114 &114841528522149958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918920795822620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd26183530037a498a4858fd6e5e405, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friendly: 1
+  damage: 100
