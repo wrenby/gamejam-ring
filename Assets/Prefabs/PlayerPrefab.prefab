@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.2
   turret: {fileID: 1010841818933364, guid: 3ac81c5a5a058c7458dd17b5b956a4c0, type: 2}
+  wall: {fileID: 1652817743036262, guid: 5f53ca3fdd58dcd419de7b6e4878d05f, type: 2}
   resourceText: {fileID: 0}
   timeText: {fileID: 0}
   startingResources: 100

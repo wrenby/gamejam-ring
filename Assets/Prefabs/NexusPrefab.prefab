@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114258167564201296}
   m_Layer: 0
   m_Name: NexusPrefab
-  m_TagString: Untagged
+  m_TagString: Nexus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1842798316921692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1000
+  hpText: {fileID: 0}
 --- !u!212 &212457854602008320
 SpriteRenderer:
   m_ObjectHideFlags: 1

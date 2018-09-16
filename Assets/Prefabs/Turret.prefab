@@ -241,8 +241,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 50
   fireDelay: 0.2
+  canFire: 1
   rotationSpeed: 0.1
-  maxHp: 100
+  maxHp: 1
   projectile_offset: 0.04
   projectile_speed: 10
   projectile_basic: {fileID: 1918920795822620, guid: 041073e00d2184547b8fb102f426e533,

@@ -404,35 +404,6 @@ Prefab:
       propertyPath: m_Name
       value: RingManager
       objectReference: {fileID: 0}
-    - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
-        type: 2}
-      propertyPath: ringBuffer
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
-        type: 2}
-      propertyPath: rings.Array.data[0]
-      value: 
-      objectReference: {fileID: 1373504873383678, guid: faf18bccd25c6f94a9a48f8bf55f1c3b,
-        type: 2}
-    - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
-        type: 2}
-      propertyPath: rings.Array.data[1]
-      value: 
-      objectReference: {fileID: 1772935389007058, guid: 88435ff9b5cef6a43a4f7cc267975f15,
-        type: 2}
-    - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
-        type: 2}
-      propertyPath: rings.Array.data[2]
-      value: 
-      objectReference: {fileID: 1731907946885058, guid: cb1e35a976a9dec4ab4f065df79fc4f1,
-        type: 2}
-    - target: {fileID: 114245452841591782, guid: 84eab9618d9401547905bba5f260fef2,
-        type: 2}
-      propertyPath: rings.Array.data[3]
-      value: 
-      objectReference: {fileID: 1143310154995414, guid: 042c22fe8588a4546b1addf510ac3280,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84eab9618d9401547905bba5f260fef2, type: 2}
   m_IsPrefabAsset: 0
@@ -475,10 +446,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1229672500430000, guid: 4f75e14c70991524699a5d5c567f89fb, type: 2}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 114937765407503820, guid: 4f75e14c70991524699a5d5c567f89fb,
         type: 2}
       propertyPath: resourceText
@@ -489,12 +456,10 @@ Prefab:
       propertyPath: timeText
       value: 
       objectReference: {fileID: 1593622500}
-    - target: {fileID: 114937765407503820, guid: 4f75e14c70991524699a5d5c567f89fb,
-        type: 2}
-      propertyPath: wall
-      value: 
-      objectReference: {fileID: 1652817743036262, guid: 5f53ca3fdd58dcd419de7b6e4878d05f,
-        type: 2}
+    - target: {fileID: 1229672500430000, guid: 4f75e14c70991524699a5d5c567f89fb, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f75e14c70991524699a5d5c567f89fb, type: 2}
   m_IsPrefabAsset: 0
@@ -541,8 +506,17 @@ Prefab:
       propertyPath: m_Name
       value: Meteor Creator
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 82890135603811378, guid: 530501d472611584380dfd8726749705, type: 2}
+    - target: {fileID: 114658037577839710, guid: 530501d472611584380dfd8726749705,
+        type: 2}
+      propertyPath: rate
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114658037577839710, guid: 530501d472611584380dfd8726749705,
+        type: 2}
+      propertyPath: damageRate
+      value: 50
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 530501d472611584380dfd8726749705, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &878387944
@@ -817,27 +791,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1842798316921692, guid: 385eaff9294d71e47b9753f78c5f3763, type: 2}
-      propertyPath: m_Name
-      value: Nexus
-      objectReference: {fileID: 0}
-    - target: {fileID: 1842798316921692, guid: 385eaff9294d71e47b9753f78c5f3763, type: 2}
-      propertyPath: m_TagString
-      value: Nexus
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559635934488126, guid: 385eaff9294d71e47b9753f78c5f3763, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4559635934488126, guid: 385eaff9294d71e47b9753f78c5f3763, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.6
-      objectReference: {fileID: 0}
     - target: {fileID: 114258167564201296, guid: 385eaff9294d71e47b9753f78c5f3763,
         type: 2}
       propertyPath: hpText
       value: 
       objectReference: {fileID: 146108282}
+    - target: {fileID: 1842798316921692, guid: 385eaff9294d71e47b9753f78c5f3763, type: 2}
+      propertyPath: m_Name
+      value: Nexus
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 385eaff9294d71e47b9753f78c5f3763, type: 2}
   m_IsPrefabAsset: 0

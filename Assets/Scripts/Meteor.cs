@@ -17,7 +17,7 @@ public class Meteor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.GetComponent<Rigidbody2D>().velocity = (((Vector2)transform.position) - center).normalized * -speed;
+        this.GetComponent<Rigidbody2D>().velocity = (((Vector2)transform.position) - center).normalized * -speed * 1 / (transform.localScale.x);
 	}
     public void setSpeed(float speed)
     {
