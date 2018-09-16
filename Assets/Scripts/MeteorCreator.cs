@@ -11,7 +11,7 @@ public class MeteorCreator : MonoBehaviour {
     public float lowScale = 0.3f, highScale = 1.0f;
 	// Use this for initialization
 	void Start () {
-        delay = 5.0f;
+        delay = 4.5f;
         startTime = Time.time;
         lastCreation = startTime;
         lastFrequency = startTime;
