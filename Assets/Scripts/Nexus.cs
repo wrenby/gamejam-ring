@@ -5,8 +5,6 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Nexus : MonoBehaviour {
-
-
     public int maxHp;
     int hp;
     public Text hpText, gameOverText;
@@ -24,6 +22,13 @@ public class Nexus : MonoBehaviour {
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1;
+        }
+        if(hp <= .1 * maxHp)
+        {
+            AudioSource mainAudio = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<AudioSource>();
+            mainAudio.volume = 0;
+            AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.volume = 1;
         }
         hpText.text = "Nexus Health: " + hp;
         gameOverText.enabled = hp <= 0;
