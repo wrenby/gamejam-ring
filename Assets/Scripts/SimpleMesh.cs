@@ -5,13 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(PolygonCollider2D), typeof(MeshRenderer), typeof(MeshFilter))]
 public class SimpleMesh : MonoBehaviour {
 	public Vector2[] mesh_points;
+	[SerializeField]
 	private MeshFilter mesh_filter;
+	[SerializeField]
 	private PolygonCollider2D poly_collider;
 	private Mesh mesh;
 
 	void Start () {
-		mesh_filter = GetComponent<MeshFilter>();
-		poly_collider = GetComponent<PolygonCollider2D>();
 		SetMesh();
 	}
 
