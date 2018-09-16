@@ -56,6 +56,7 @@ public class Orbiter : MonoBehaviour {
         }
         if (canFire && Input.GetButton("Fire1") && lastFireTime + fireDelay <= Time.time)
         {
+<<<<<<< HEAD
                 Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
                 clone.speed = projectile_speed;
                 clone.forward = new Vector3( // Already normalized thanks to sin & cos
@@ -64,6 +65,16 @@ public class Orbiter : MonoBehaviour {
                     0
                 );
                 lastFireTime = Time.time;
+=======
+            Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
+            clone.speed = projectile_speed;
+            clone.forward = new Vector3( // Already normalized thanks to sin & cos
+                Mathf.Sin(theta),
+                Mathf.Cos(theta),
+                0
+            );
+            lastFireTime = Time.time;
+>>>>>>> ee1d2ebc2e6a0b53fcee1c50efbe43c070d497f6
         }
         theta = theta % TWO_PI;
 		transform.position = CartesianPosition();
