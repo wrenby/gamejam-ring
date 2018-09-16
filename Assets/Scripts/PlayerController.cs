@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     private Vector2 center;
-    public float speed = .2f;
+    public float speed = .2f, angleTolerance = .1f;
     public GameObject turret, wall;
     public Text resourceText, timeText;
     public int startingResources = 100;
@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour {
     private void placeWall()
     {
         Orbiter wallScript = wall.GetComponent<Orbiter>();
-        if(resources >= wallScript.cost)
+        if(isClear() && resources >= wallScript.cost)
         {
             resources -= wallScript.cost;
             GameObject ring = ringMan.getRing(transform.position);
@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour {
     private void placeTurret()
     {
         Orbiter turretScript = turret.GetComponent<Orbiter>();
-        if(resources >= turretScript.cost)
+        if(isClear() && resources >= turretScript.cost)
         {
             resources -= turretScript.cost;
             GameObject ring = ringMan.getRing(transform.position);
@@ -96,5 +96,18 @@ public class PlayerController : MonoBehaviour {
             newTurretScript.setTheta(angle);
             newTurretScript.setRho(radius);
         }
+    }
+
+    private bool isClear()
+    {
+        GameObject ring = ringMan.getRing(transform.position);
+        Orbiter[] orbiters = ring.GetComponentsInChildren<Orbiter>();
+        for (int i = 0; i < orbiters.Length; i++) {
+            if (Mathf.Abs(orbiters[i].theta - angle) < angleTolerance)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }

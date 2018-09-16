@@ -13,9 +13,9 @@ public class Orbiter : MonoBehaviour {
     public bool canFire = true;
     public float rotationSpeed = 50.0f;
     [Range(0.0f, 100.0f)]
-    private float rho = 500.0f;
+    public float rho = 500.0f;
 	[Range(0.0f, TWO_PI)]
-	private float theta = 0.0f; // Angle
+	public float theta = 0.0f; // Angle
 
     public int maxHp = 100;
     private int hp;

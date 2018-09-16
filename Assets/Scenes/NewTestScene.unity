@@ -156,7 +156,7 @@ Prefab:
         type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: fe71515aed75daf47aa9903558a1e86e, type: 3}
+      objectReference: {fileID: 8300000, guid: e628e04bbe167014cab45d62e8d2183f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 201b411a3b5dfb74e81d782f6cb0290d, type: 2}
   m_IsPrefabAsset: 0
@@ -333,6 +333,11 @@ Prefab:
     - target: {fileID: 1229672500430000, guid: 4f75e14c70991524699a5d5c567f89fb, type: 2}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 114937765407503820, guid: 4f75e14c70991524699a5d5c567f89fb,
+        type: 2}
+      propertyPath: angleTolerance
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f75e14c70991524699a5d5c567f89fb, type: 2}
