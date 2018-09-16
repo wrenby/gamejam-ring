@@ -51,21 +51,21 @@ public class Orbiter : MonoBehaviour {
             {
                 theta -= rotationSpeed;
             }
+            if (canFire && Input.GetButton("Fire1") && lastFireTime + fireDelay <= Time.time)
+            {
+                Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
+                clone.speed = projectile_speed;
+                clone.forward = new Vector3( // Already normalized thanks to sin & cos
+                    Mathf.Sin(theta),
+                    Mathf.Cos(theta),
+                    0
+                );
+                lastFireTime = Time.time;
+            }
         }
         theta = theta % TWO_PI;
 		transform.position = CartesianPosition();
 		transform.rotation = Quaternion.Euler(0,0,-theta*RAD_TO_DEG);
-
-		if (canFire && Input.GetButton("Fire1") && lastFireTime+fireDelay <= Time.time) {
-			Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
-			clone.speed = projectile_speed;
-			clone.forward = new Vector3( // Already normalized thanks to sin & cos
-				Mathf.Sin(theta),
-				Mathf.Cos(theta),
-                0
-			);
-            lastFireTime = Time.time;
-		}
 	}
 
     public void setTheta(float newTheta)
