@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
-        radiusIncrement = ringMan.ringBuffer;
+        radiusIncrement = ringMan.ringBuffer/2;
         minRadius = radiusIncrement;
         maxRadius = radiusIncrement * ringMan.numRings;
         center = ringMan.center;

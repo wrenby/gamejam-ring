@@ -51,7 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a107c74bccc9ca47947736b7cd94bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ring: {fileID: 1312958277270152, guid: c51092c0fe719d743bfa901b5aab8733, type: 2}
+  rings:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   numRings: 5
-  ringBuffer: 2
+  ringBuffer: 1
   center: {x: 0, y: 0}
