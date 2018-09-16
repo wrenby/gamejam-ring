@@ -24,6 +24,7 @@ public class Nexus : MonoBehaviour {
         if(hp <= 0)
         {
             //Lose the game lol
+            Debug.Log("You lose!");
         }
     }
 }
