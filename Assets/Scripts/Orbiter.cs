@@ -57,17 +57,14 @@ public class Orbiter : MonoBehaviour {
         }
         if (canFire && Input.GetButton("Fire1") && lastFireTime + fireDelay <= Time.time)
         {
-            if (ring == ringMan.getSelectedRing())
-            {
-                Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
-                clone.speed = projectile_speed;
-                clone.forward = new Vector3( // Already normalized thanks to sin & cos
-                    Mathf.Sin(theta),
-                    Mathf.Cos(theta),
-                    0
-                );
-                lastFireTime = Time.time;
-            }
+            Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
+            clone.speed = projectile_speed;
+            clone.forward = new Vector3( // Already normalized thanks to sin & cos
+                Mathf.Sin(theta),
+                Mathf.Cos(theta),
+                0
+            );
+            lastFireTime = Time.time;
         }
         theta = theta % TWO_PI;
 		transform.position = CartesianPosition();
