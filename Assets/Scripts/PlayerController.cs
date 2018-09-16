@@ -95,6 +95,7 @@ public class PlayerController : MonoBehaviour {
             Orbiter newTurretScript = newTurret.GetComponent<Orbiter>();
             newTurretScript.setTheta(angle);
             newTurretScript.setRho(radius);
+            newTurretScript.ring = ring;
         }
     }
 }

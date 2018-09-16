@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeteorCreator : MonoBehaviour {
 
     public GameObject meteor;
-    private float startTime, lastCreation, delay;
+    private float startTime, lastCreation, lastFrequency, delay;
     private RingManager ringMan;
     public int rate = 100, damageRate = 50;
     public float lowScale = 0.3f, highScale = 1.0f;
@@ -14,6 +14,7 @@ public class MeteorCreator : MonoBehaviour {
         delay = 5.0f;
         startTime = Time.time;
         lastCreation = startTime;
+        lastFrequency = startTime;
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
 	}
 	
@@ -32,8 +33,11 @@ public class MeteorCreator : MonoBehaviour {
             Meteor newMeteorScript = newMeteor.GetComponent<Meteor>();
             newMeteorScript.setMaxHP((int)((1 + newScale)*rate * ((deltaTime/60 + 5))));
             newMeteorScript.setDamage((int)((1+newScale)*damageRate * ((deltaTime / 60 + 1))));
-            delay *= .99f;
             lastCreation = Time.time;
+        }
+        if (lastFrequency + 5 < Time.time) { // Decreasing the delay is its own tick
+            delay *= .95f;
+            lastFrequency = Time.time;
         }
 	}
 }
