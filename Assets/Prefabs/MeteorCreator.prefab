@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteor: {fileID: 1189466791849548, guid: 3b90651a619d6fa489cce3d838fe77a7, type: 2}
-  rate: 500
-  damageRate: 100
-  lowScale: 0.2
+  rate: 150
+  damageRate: 50
+  lowScale: 0.4
   highScale: 1

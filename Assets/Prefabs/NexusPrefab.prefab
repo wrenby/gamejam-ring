@@ -37,7 +37,7 @@ Transform:
   m_GameObject: {fileID: 1842798316921692}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6, y: 0.6, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,6 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 1000
   hpText: {fileID: 0}
+  gameOverText: {fileID: 0}
 --- !u!212 &212457854602008320
 SpriteRenderer:
   m_ObjectHideFlags: 1

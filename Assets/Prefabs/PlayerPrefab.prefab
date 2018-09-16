@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1229672500430000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.2
+  tolerance: 1
   turret: {fileID: 1010841818933364, guid: 3ac81c5a5a058c7458dd17b5b956a4c0, type: 2}
   wall: {fileID: 1652817743036262, guid: 5f53ca3fdd58dcd419de7b6e4878d05f, type: 2}
   resourceText: {fileID: 0}

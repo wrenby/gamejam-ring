@@ -27,7 +27,7 @@ public class MeteorCreator : MonoBehaviour {
         {
             GameObject newMeteor = Instantiate(meteor);
             float angle = Random.Range(0, 2 * Mathf.PI);
-            float radius = ringMan.getMaxRadius() * 1.5f;
+            float radius = ringMan.getMaxRadius() * 3f;
             newMeteor.transform.position = new Vector2(radius * Mathf.Sin(angle), radius * Mathf.Cos(angle));
             float newScale = Random.Range(lowScale, highScale);
             newMeteor.transform.localScale = new Vector3(newScale, newScale, newScale);

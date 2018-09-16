@@ -57,5 +57,5 @@ MonoBehaviour:
   - {fileID: 1731907946885058, guid: cb1e35a976a9dec4ab4f065df79fc4f1, type: 2}
   - {fileID: 1143310154995414, guid: 042c22fe8588a4546b1addf510ac3280, type: 2}
   numRings: 5
-  ringBuffer: 4
+  ringBuffer: 2.5
   center: {x: 0, y: 0}
