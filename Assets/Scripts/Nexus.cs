@@ -40,7 +40,10 @@ public class Nexus : MonoBehaviour {
 =======
             //Lose the game lol
             Debug.Log("You lose!");
+<<<<<<< HEAD
 >>>>>>> 284c61505197b6b5c7bc8ee8b9576cdd89b4819f
+=======
+>>>>>>> a667d64b52ee7b7acf9aff45c1833979a8f7f267
         }
     }
 }

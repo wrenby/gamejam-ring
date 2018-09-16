@@ -5,7 +5,7 @@ using UnityEngine;
 public class MeteorCreator : MonoBehaviour {
 
     public GameObject meteor;
-    private float startTime, lastCreation, delay;
+    private float startTime, lastCreation, lastFrequency, delay;
     private RingManager ringMan;
     public int rate = 100, damageRate = 50;
     public float lowScale = 0.3f, highScale = 1.0f;
@@ -14,6 +14,7 @@ public class MeteorCreator : MonoBehaviour {
         delay = 5.0f;
         startTime = Time.time;
         lastCreation = startTime;
+        lastFrequency = startTime;
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
 	}
 	
@@ -32,10 +33,19 @@ public class MeteorCreator : MonoBehaviour {
             newMeteor.transform.localScale = new Vector3(newScale, newScale, newScale);
             newMeteor.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, Mathf.PI * 2));
             Meteor newMeteorScript = newMeteor.GetComponent<Meteor>();
+<<<<<<< HEAD
             newMeteorScript.setMaxHP((int)((newScale)*rate * ((deltaTime/60 + 5))));
             newMeteorScript.setDamage((int)((1 + newScale)*damageRate * ((deltaTime / 60 + 1))));
             delay *= .99f;
+=======
+            newMeteorScript.setMaxHP((int)((1 + newScale)*rate * ((deltaTime/60 + 5))));
+            newMeteorScript.setDamage((int)((1+newScale)*damageRate * ((deltaTime / 60 + 1))));
+>>>>>>> a667d64b52ee7b7acf9aff45c1833979a8f7f267
             lastCreation = Time.time;
+        }
+        if (lastFrequency + 5 < Time.time) { // Decreasing the delay is its own tick
+            delay *= .95f;
+            lastFrequency = Time.time;
         }
 	}
 }
