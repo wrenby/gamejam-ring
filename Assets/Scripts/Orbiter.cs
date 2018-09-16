@@ -7,10 +7,10 @@ public class Orbiter : MonoBehaviour {
 	public const float RAD_TO_DEG = 180.0f/Mathf.PI;
 	public const float TWO_PI = 2*Mathf.PI;
     public int cost;
-    public float fireDelay = 0.0f;
+    public float fireDelay = 0.2f;
     private float lastFireTime = 0.0f;
-    private PlayerController player;
     private RingManager ringMan;
+    public bool canFire = true;
     public float rotationSpeed = 50.0f;
     [Range(0.0f, 100.0f)]
     private float rho = 500.0f;
@@ -29,7 +29,6 @@ public class Orbiter : MonoBehaviour {
 
     public void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
         hp = maxHp;
     }
@@ -57,7 +56,7 @@ public class Orbiter : MonoBehaviour {
 		transform.position = CartesianPosition();
 		transform.rotation = Quaternion.Euler(0,0,-theta*RAD_TO_DEG);
 
-		if (Input.GetButtonDown("Fire1") && lastFireTime+fireDelay <= Time.time) {
+		if (canFire && Input.GetButton("Fire1") && lastFireTime+fireDelay <= Time.time) {
 			Projectile clone = GameObject.Instantiate(projectile_basic, transform.position, transform.rotation).GetComponent<Projectile>();
 			clone.speed = projectile_speed;
 			clone.forward = new Vector3( // Already normalized thanks to sin & cos
@@ -65,6 +64,7 @@ public class Orbiter : MonoBehaviour {
 				Mathf.Cos(theta),
                 0
 			);
+            lastFireTime = Time.time;
 		}
 	}
 
@@ -84,6 +84,7 @@ public class Orbiter : MonoBehaviour {
         if(hp <= 0)
         {
             AudioSource audio = gameObject.GetComponent<AudioSource>();
+            audio.enabled = true;
             audio.Play();
             Destroy(this.gameObject);
         }

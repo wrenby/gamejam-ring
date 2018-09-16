@@ -5,7 +5,6 @@ using UnityEngine;
 public class Ring : MonoBehaviour {
     public Sprite unselected, selected;
     private RingManager ringMan;
-    private int layer;
 	void Start () {
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
 	}
@@ -21,9 +20,4 @@ public class Ring : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite = unselected;
         }
 	}
-
-    public void setLayer(int layer)
-    {
-        this.layer = layer;
-    }
 }

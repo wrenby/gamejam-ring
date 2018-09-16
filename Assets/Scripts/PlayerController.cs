@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     private Vector2 center;
     public float speed = .2f;
     public GameObject turret;
-    float radius, angle, radiusIncrement, minRadius, maxRadius;
+    public Text resourceText, timeText;
+    public int startingResources = 100;
+    float radius, angle, radiusIncrement, minRadius, maxRadius, startTime;
     int resources;
     GameObject player;
     RingManager ringMan;
@@ -18,6 +21,8 @@ public class PlayerController : MonoBehaviour {
         maxRadius = ringMan.getMaxRadius();
         center = ringMan.center;
         resources = 0;
+        startTime = Time.time;
+        resources = startingResources;
 	}
 	
 	// Update is called once per frame
@@ -49,6 +54,11 @@ public class PlayerController : MonoBehaviour {
         {
             placeTurret();
         }
+        float deltaTime = Time.time - startTime;
+        int seconds = ((int)deltaTime % 60);
+        int minutes = ((int)deltaTime / 60);
+        timeText.text = "Time Survived: " + minutes.ToString("00") + ":" + seconds.ToString("00");
+        resourceText.text = "Scrap Metal: " + resources;
     }
 
     public void getResources(int amount)

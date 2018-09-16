@@ -239,8 +239,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea6c2c30652fa44a871c863afd6a641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  fireDelay: 0
+  cost: 50
+  fireDelay: 0.2
   rotationSpeed: 0.1
   maxHp: 100
   projectile_offset: 0.04
