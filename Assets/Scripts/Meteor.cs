@@ -9,7 +9,7 @@ public class Meteor : MonoBehaviour {
     private RingManager ringMan;
     public float speed = 10f;
     private float hp;
-    public float minResources = 5, maxResources = 100, damage = 10, maxHp = 100;
+    public float minResources = 50, maxResources = 100, damage = 10, maxHp = 100;
     void Start () {
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
         center = ringMan.center;
@@ -36,7 +36,7 @@ public class Meteor : MonoBehaviour {
         hp -= damage;
         if(hp <= 0)
         {
-            //die, whatever that means
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().getResources((int)Random.Range(minResources, maxResources + 1));
         }
     }
 }

@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - RingManager
+  - Nexus
   layers:
   - Default
   - TransparentFX

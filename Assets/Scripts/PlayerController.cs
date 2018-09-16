@@ -6,15 +6,17 @@ public class PlayerController : MonoBehaviour {
     private Vector2 center;
     public float speed = .2f;
     float radius, angle, radiusIncrement, minRadius, maxRadius;
+    int resources;
     GameObject player;
     RingManager ringMan;
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
         ringMan = GameObject.FindGameObjectWithTag("RingManager").GetComponent<RingManager>();
         radiusIncrement = ringMan.ringBuffer/2;
-        minRadius = radiusIncrement;
-        maxRadius = ringMan.getMaxRingNum()*radiusIncrement;
+        minRadius = ringMan.getMinRadius();
+        maxRadius = ringMan.getMaxRadius();
         center = ringMan.center;
+        resources = 0;
 	}
 	
 	// Update is called once per frame
@@ -42,4 +44,9 @@ public class PlayerController : MonoBehaviour {
         player.transform.position = new Vector2(radius * Mathf.Cos(angle) + center.x, radius * Mathf.Sin(angle) + center.y);
         player.transform.up = (Vector2)player.transform.position - center;
 	}
+
+    public void getResources(int amount)
+    {
+        resources += amount;
+    }
 }

@@ -13,8 +13,7 @@ public class RingManager : MonoBehaviour {
         for (int i = 0; i < numRings; i++)
         {
             GameObject newRing = Instantiate(rings[i]);
-            print(newRing.GetComponent<SpriteRenderer>().sprite.rect.width);
-            float scale = 100*ringBuffer / rings[0].GetComponent<SpriteRenderer>().sprite.rect.width;
+            float scale = 100*(ringBuffer) / rings[0].GetComponent<SpriteRenderer>().sprite.rect.width;
             newRing.transform.localScale = new Vector3(scale, scale, scale);
             newRing.transform.position = center;
         }
@@ -27,5 +26,13 @@ public class RingManager : MonoBehaviour {
     public int getMaxRingNum()
     {
         return Mathf.Min(rings.Length, numRings);
+    }
+    public float getMinRadius()
+    {
+        return ringBuffer / 2;
+    }
+    public float getMaxRadius()
+    {
+        return ringBuffer * getMaxRingNum() / 2;
     }
 }
