@@ -21,9 +21,8 @@ public class Orbiter : MonoBehaviour {
     private int hp;
 
 	// Projectile info
-	public float projectile_offset = 0.04f; // Distance from center of the ship to spawn the bullets
 	[Range(0.0f, 40.0f)]
-	public float projectile_speed = 1000.0f;
+	public float projectile_speed = 16.0f;
 	// Projectile prefabs
 	public GameObject projectile_basic;
 

@@ -16,6 +16,10 @@ public class Nexus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (gameOverText.enabled && Input.GetKeyDown(KeyCode.Space)) 
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -30,8 +34,13 @@ public class Nexus : MonoBehaviour {
         hp -= damage;
         if(hp <= 0)
         {
+<<<<<<< HEAD
             Time.timeScale = 0;
             gameOverText.enabled = true;
+=======
+            //Lose the game lol
+            Debug.Log("You lose!");
+>>>>>>> 284c61505197b6b5c7bc8ee8b9576cdd89b4819f
         }
     }
 }
