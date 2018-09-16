@@ -33,14 +33,10 @@ public class MeteorCreator : MonoBehaviour {
             newMeteor.transform.localScale = new Vector3(newScale, newScale, newScale);
             newMeteor.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, Mathf.PI * 2));
             Meteor newMeteorScript = newMeteor.GetComponent<Meteor>();
-<<<<<<< HEAD
             newMeteorScript.setMaxHP((int)((newScale)*rate * ((deltaTime/60 + 5))));
             newMeteorScript.setDamage((int)((1 + newScale)*damageRate * ((deltaTime / 60 + 1))));
-            delay *= .99f;
-=======
             newMeteorScript.setMaxHP((int)((1 + newScale)*rate * ((deltaTime/60 + 5))));
             newMeteorScript.setDamage((int)((1+newScale)*damageRate * ((deltaTime / 60 + 1))));
->>>>>>> a667d64b52ee7b7acf9aff45c1833979a8f7f267
             lastCreation = Time.time;
         }
         if (lastFrequency + 5 < Time.time) { // Decreasing the delay is its own tick
